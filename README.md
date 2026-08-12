@@ -104,3 +104,7 @@ icons/          Extension icons and source SVG
 ```
 
 GitHub Actions runs `npm run check` and verifies the packaged extension on every push and pull request.
+
+## License
+
+ScreenSlot is released under the [MIT License](LICENSE).

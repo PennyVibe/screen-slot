@@ -12,6 +12,7 @@ rm -f "$release_archive"
 cd "$project_root"
 zip -qr "$release_archive" \
   manifest.json \
+  LICENSE \
   _locales \
   icons \
   background \

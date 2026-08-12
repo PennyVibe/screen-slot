@@ -104,3 +104,7 @@ icons/          扩展图标及 SVG 源文件
 ```
 
 GitHub Actions 会在每次推送和拉取请求时执行 `npm run check`，并验证扩展发布包。
+
+## 开源许可
+
+ScreenSlot 使用 [MIT License](LICENSE) 发布。
