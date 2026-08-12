@@ -1,0 +1,95 @@
+body {
+  width: 320px;
+  margin: 0;
+  background: Canvas;
+  color: CanvasText;
+}
+
+main {
+  padding: 18px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.description,
+.hint,
+.status {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.description {
+  color: GrayText;
+}
+
+.screen-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.screen-field[hidden] {
+  display: none;
+}
+
+select,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font: inherit;
+}
+
+select {
+  padding: 8px;
+}
+
+button {
+  margin-top: 16px;
+  border: 0;
+  padding: 10px 12px;
+  background: #0b57d0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #0842a0;
+}
+
+button.secondary {
+  margin-top: 8px;
+  background: color-mix(in srgb, CanvasText 10%, transparent);
+  color: CanvasText;
+}
+
+button.secondary:hover {
+  background: color-mix(in srgb, CanvasText 16%, transparent);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.status {
+  min-height: 20px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.status.error {
+  color: #b3261e;
+}
+
+.hint {
+  margin-top: 8px;
+  color: GrayText;
+  font-size: 12px;
+}

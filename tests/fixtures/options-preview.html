@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../options/">
+    <title>ScreenSlot options preview</title>
+  </head>
+  <body>
+    <script type="module">
+      const parameters = new URLSearchParams(location.search);
+      const locale = parameters.get("locale") === "zh_CN" ? "zh_CN" : "en";
+      const messages = await fetch(`/_locales/${locale}/messages.json`).then(
+        (response) => response.json(),
+      );
+      const storedValues = {};
+
+      const chromeApi = globalThis.chrome ?? {};
+      chromeApi.i18n = {
+        getMessage(messageName, substitutions = []) {
+          const definition = messages[messageName];
+          if (!definition) {
+            return "";
+          }
+
+          const values = Array.isArray(substitutions)
+            ? substitutions
+            : [substitutions];
+          let message = definition.message;
+          for (const [placeholder, descriptor] of Object.entries(
+            definition.placeholders ?? {},
+          )) {
+            const position = Number(descriptor.content.slice(1)) - 1;
+            message = message.replaceAll(
+              `$${placeholder}$`,
+              String(values[position] ?? ""),
+            );
+          }
+          return message;
+        },
+        getUILanguage() {
+          return locale.replaceAll("_", "-");
+        },
+      };
+      chromeApi.storage = {
+        local: {
+          async get(key) {
+            return { [key]: storedValues[key] };
+          },
+          async remove(key) {
+            delete storedValues[key];
+          },
+          async set(update) {
+            Object.assign(storedValues, update);
+          },
+        },
+      };
+      globalThis.chrome = chromeApi;
+
+      const source = await fetch("/options/options.html").then((response) =>
+        response.text(),
+      );
+      const parsed = new DOMParser().parseFromString(source, "text/html");
+      for (const stylesheet of parsed.querySelectorAll('link[rel="stylesheet"]')) {
+        document.head.append(stylesheet.cloneNode());
+      }
+      document.body.replaceWith(parsed.body);
+      await import("/options/options.js");
+    </script>
+  </body>
+</html>

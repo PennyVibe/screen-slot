@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="optionsPageTitle"></title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings-card">
+      <header>
+        <img src="../icons/icon128.png" width="64" height="64" alt="">
+        <div>
+          <p class="eyebrow">ScreenSlot</p>
+          <h1 data-i18n="optionsHeading"></h1>
+          <p class="description" data-i18n="optionsDescription"></p>
+        </div>
+      </header>
+
+      <div class="settings-layout">
+        <section class="controls" data-i18n-aria-label="layoutConfigAria">
+          <fieldset>
+            <legend data-i18n="windowPositionLegend"></legend>
+            <div class="position-grid" data-i18n-aria-label="positionGridAria">
+              <button type="button" data-horizontal="left" data-vertical="top" data-i18n-aria-label="positionTopLeft">↖</button>
+              <button type="button" data-horizontal="center" data-vertical="top" data-i18n-aria-label="positionTopCenter">↑</button>
+              <button type="button" data-horizontal="right" data-vertical="top" data-i18n-aria-label="positionTopRight">↗</button>
+              <button type="button" data-horizontal="left" data-vertical="middle" data-i18n-aria-label="positionMiddleLeft">←</button>
+              <button type="button" data-horizontal="center" data-vertical="middle" data-i18n-aria-label="positionCenter">•</button>
+              <button type="button" data-horizontal="right" data-vertical="middle" data-i18n-aria-label="positionMiddleRight">→</button>
+              <button type="button" data-horizontal="left" data-vertical="bottom" data-i18n-aria-label="positionBottomLeft">↙</button>
+              <button type="button" data-horizontal="center" data-vertical="bottom" data-i18n-aria-label="positionBottomCenter">↓</button>
+              <button type="button" data-horizontal="right" data-vertical="bottom" data-i18n-aria-label="positionBottomRight">↘</button>
+            </div>
+          </fieldset>
+
+          <label class="range-control" for="width-percent">
+            <span data-i18n="windowWidthLabel"></span>
+            <output id="width-value" for="width-percent">50%</output>
+            <input id="width-percent" type="range" min="10" max="100" step="1" value="50">
+          </label>
+
+          <label class="range-control" for="height-percent">
+            <span data-i18n="windowHeightLabel"></span>
+            <output id="height-value" for="height-percent">50%</output>
+            <input id="height-percent" type="range" min="10" max="100" step="1" value="50">
+          </label>
+        </section>
+
+        <section class="preview-section" data-i18n-aria-label="previewRegionAria">
+          <h2 data-i18n="previewHeading"></h2>
+          <div class="display-preview" aria-hidden="true">
+            <div id="window-preview" class="window-preview">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <p id="layout-summary" class="layout-summary"></p>
+        </section>
+      </div>
+
+      <div class="actions">
+        <button id="save-button" class="primary" type="button" data-i18n="saveSettingsButton"></button>
+        <button id="reset-button" class="secondary" type="button" data-i18n="restoreDefaultsButton"></button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

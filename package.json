@@ -1,0 +1,10 @@
+{
+  "name": "screen-slot",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/unit/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run test && npm run validate",
+    "package": "npm run check && sh scripts/package.sh"
+  }
+}

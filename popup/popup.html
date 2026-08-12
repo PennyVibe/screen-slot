@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ScreenSlot</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <h1>ScreenSlot</h1>
+      <p class="description" data-i18n="popupDescription"></p>
+
+      <label id="screen-field" class="screen-field" for="screen-select" hidden>
+        <span data-i18n="targetDisplayLabel"></span>
+        <select id="screen-select"></select>
+      </label>
+
+      <button id="move-button" type="button" data-i18n="sendCurrentTabButton"></button>
+      <button id="layout-settings-button" class="secondary" type="button" data-i18n="layoutSettingsButton"></button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <p class="hint" data-i18n="popupHint"></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

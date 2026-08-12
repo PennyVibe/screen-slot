@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">标签页发送到外接屏左下四分区</title>
+  <defs>
+    <linearGradient id="background" x1="18" y1="12" x2="110" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173B78"/>
+      <stop offset="1" stop-color="#08162F"/>
+    </linearGradient>
+    <linearGradient id="activeTile" x1="28" y1="61" x2="64" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55F2BD"/>
+      <stop offset="1" stop-color="#28B7FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#background)"/>
+
+  <rect x="19" y="23" width="90" height="72" rx="11" fill="#0B2147" stroke="#F7FAFF" stroke-width="7"/>
+  <path d="M64 27V91M23 59H105" fill="none" stroke="#9EB5D8" stroke-width="4" opacity="0.55"/>
+  <path d="M25 60H62V89H30C27.239 89 25 86.761 25 84V60Z" fill="url(#activeTile)"/>
+
+  <path d="M84 39L56 67" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <path d="M56 49V67H74" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M64 96V106M47 110H81" fill="none" stroke="#F7FAFF" stroke-width="7" stroke-linecap="round"/>
+</svg>

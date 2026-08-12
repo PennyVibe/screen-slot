@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="setupPageTitle"></title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="setup.css">
+  </head>
+  <body>
+    <main class="card">
+      <img src="../icons/icon128.png" width="72" height="72" alt="">
+      <div>
+        <p class="eyebrow" data-i18n="setupEyebrow"></p>
+        <h1 data-i18n="setupHeading"></h1>
+        <p class="description" data-i18n="setupDescription"></p>
+      </div>
+
+      <label id="screen-field" class="screen-field" for="screen-select" hidden>
+        <span data-i18n="targetDisplayLabel"></span>
+        <select id="screen-select"></select>
+      </label>
+
+      <div class="actions">
+        <button id="authorize-button" class="primary" type="button" data-i18n="authorizeAndMoveButton"></button>
+        <button id="layout-settings-button" class="secondary" type="button" data-i18n="layoutSettingsButton"></button>
+        <button id="permission-settings-button" class="secondary" type="button" hidden data-i18n="openPermissionSettingsButton"></button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite" data-i18n="setupInitialStatus"></p>
+    </main>
+    <script type="module" src="setup.js"></script>
+  </body>
+</html>
