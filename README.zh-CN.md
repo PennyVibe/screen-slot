@@ -31,6 +31,8 @@ ScreenSlot 是一个 Chrome 扩展：它会把当前活动标签页从原窗口�
 
 ## 窗口布局设置
 
+![ScreenSlot 窗口布局设置](docs/images/options-page-zh-CN.png)
+
 可以通过以下任一方式打开设置页：
 
 - 右键点击 ScreenSlot 工具栏图标，然后选择“选项”。
@@ -101,6 +103,7 @@ tests/manual/   多显示器回归测试清单
 tests/fixtures/ 使用真实语言资源的浏览器预览夹具
 scripts/        校验与发布打包脚本
 icons/          扩展图标及 SVG 源文件
+docs/images/    文档使用的选项页截图
 ```
 
 GitHub Actions 会在每次推送和拉取请求时执行 `npm run check`，并验证扩展发布包。

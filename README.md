@@ -31,6 +31,8 @@ The default layout is the lower-left quarter of the target display.
 
 ## Window layout settings
 
+![ScreenSlot window layout settings](docs/images/options-page-en.png)
+
 Open the settings page in any of these ways:
 
 - Right-click the ScreenSlot toolbar icon and choose **Options**.
@@ -101,6 +103,7 @@ tests/manual/   Multi-display regression checklist
 tests/fixtures/ Browser preview fixtures backed by real locale files
 scripts/        Validation and release packaging
 icons/          Extension icons and source SVG
+docs/images/    Options page screenshots used by the documentation
 ```
 
 GitHub Actions runs `npm run check` and verifies the packaged extension on every push and pull request.
